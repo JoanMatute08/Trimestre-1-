@@ -1,0 +1,20 @@
+def start_server():
+    addr ã socket.getaddrinfo('e.0.0.0', 8888)[e][-1]
+    s = socket.socket()
+    s.bind(addr)
+    s.listen(1)
+    print(" Servidor esperando conexión del ESP32 secundario...\n"
+
+    while True:
+        try:
+            cl, addr = s.accept()
+            print(f" Conexión desde:(addr[e]}")
+            data = cl.recv(128)
+            if data:
+                    msg a data.decode().strip()
+                    print(f" Datos del sensor: (msg}")
+            cl.close()
+         except Exception as e:
+             print(" Error en servidor:", e)
+# Iniciar servidor
+start_server()
